@@ -7,7 +7,7 @@ import * as dat from 'dat.gui'
  * Base
  */
 // Debug
-const gui = new dat.GUI()
+// const gui = new dat.GUI()
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
@@ -21,7 +21,7 @@ const axesHelper = new THREE.AxesHelper()
  * Textures
  */
 const textureLoader = new THREE.TextureLoader()
-const matcapTexture = textureLoader.load('/textures/matcaps/7.png')
+const matcapTexture = textureLoader.load('/textures/matcaps/11.jpg')
 
 // fonts
 const fontLoader = new THREE.FontLoader()
@@ -30,7 +30,7 @@ fontLoader.load(
     'fonts/helvetiker_regular.typeface.json',
     function(font) {
         const textGeometry = new THREE.TextBufferGeometry(
-            'three.js',
+            'Louise',
             {
                 font: font,
                 size: 0.5,
@@ -129,7 +129,8 @@ controls.enableDamping = true
  * Renderer
  */
 const renderer = new THREE.WebGLRenderer({
-    canvas: canvas
+    canvas: canvas,
+    antialias: true
 })
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
